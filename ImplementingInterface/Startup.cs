@@ -1,4 +1,6 @@
 using ImplementingInterface.Interface;
+using ImplementingInterface.Repo;
+using ImplementingInterface.Repo.IRepo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +27,9 @@ namespace ImplementingInterface
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+
+            services.AddScoped<ITConverter, TConverter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
